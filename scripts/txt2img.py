@@ -17,7 +17,7 @@ from ldm.util import instantiate_from_config
 from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.models.diffusion.plms import PLMSSampler
 from ldm.models.diffusion.dpm_solver import DPMSolverSampler
-
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:9000"
 torch.set_grad_enabled(False)
 
 def chunk(it, size):
